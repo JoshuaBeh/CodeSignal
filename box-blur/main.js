@@ -10,16 +10,15 @@ function solution(image) {
   var nine = 0;
   var count = 0;
   var i = 0;
-  var j = 0;
   for (; i < image.length;) {
+    var j = i;
     for (; j < image[i].length; j++) {
-      if (count < 4) {
+      if (count < 3) {
         currentSum = currentSum + image[i][j];
         count++;
         nine++;
-      } else {
+      } else if (count === 3) {
         count = 0;
-        // j = 0;
         i++;
         break;
       }
